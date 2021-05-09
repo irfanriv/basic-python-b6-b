@@ -11,10 +11,10 @@ def sent():
     password = str(e2.get())
     subject = str(e3.get())
     pesan = str(T.get("1.0",END))
-    print(almt_email)
-    print(password)
-    print(subject)
-    print(pesan)
+    #print(almt_email)
+    #print(password)
+    #print(subject)
+    #print(pesan)
     import smtplib, ssl
     from email.mime.text import MIMEText
     from email.mime.base import MIMEBase
@@ -35,10 +35,10 @@ def sent():
     body_of_email = pesan
 
     #buat message, subject line, from and to
-    mssg = MIMEText(body_of_email, 'html')
-    mssg['Subject'] = subject
-    mssg['From'] = sender
-    mssg['To'] = ','.join(receivers)
+    msg = MIMEText(body_of_email, 'html')
+    msg['Subject'] = subject
+    msg['From'] = sender
+    msg['To'] = ','.join(receivers)
     
     #memperhubung ke gmail
     s = smtplib.SMTP_SSL(host = 'smpt.gmail.com', port = 465)
